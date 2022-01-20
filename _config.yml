@@ -12,7 +12,7 @@ description: >-
   Wide open throttle.
   Photographer in another life.
 baseurl: "/"
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://m6w6.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: _m6w6
 github_username:  m6w6
 
