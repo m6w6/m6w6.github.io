@@ -1,0 +1,42 @@
+$body-font: 'Linux Biolinum';
+$header-font: 'Linux Libertine Display', Georgia, 'Times New Roman', Times, serif;
+$code-font: 'DejaVu Sans Mono', 'Bitstream Vera Mono', 'Menlo', 'Consolas', 'Andale Mono', 'Lucida Console', 'Monospace', monospace;
+
+//$font-size: 14px;
+//$line-height: 130%;
+$font-size: 12px;
+$line-height: 180%;
+
+@font-face {
+	font-family: 'Linux Libertine Display';
+	src: url('subset-LinLibertineDisplay.woff2') format('woff2'), url('subset-LinLibertineDisplay.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Linux Biolinum';
+	src: local('Linux Biolinum Italic'), local('LinBiolinumI'),
+	url('subset-LinBiolinumI.woff2') format('woff2'),
+	url('subset-LinBiolinumI.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Linux Biolinum';
+	src: local('Linux Biolinum'), local('LinBiolinum'),
+	url('subset-LinBiolinum.woff2') format('woff2'),
+	url('subset-LinBiolinum.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Linux Biolinum';
+	src: local('Linux Biolinum Bold'), local('LinBiolinumB'),
+	url('subset-LinBiolinumB.woff2') format('woff2'),
+	url('subset-LinBiolinumB.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}

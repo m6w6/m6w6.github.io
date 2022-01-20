@@ -1,0 +1,28 @@
+{% include head.html %}
+
+<body class="post">
+
+<div>
+	<header>
+		<h1>{{ page.title }}</h1>
+		<div aria-hidden="true">
+			<span title="minimize">_</span>
+			<span title="maximize">☐</span>
+			<span title="close">☒</span>
+		</div>
+	</header>
+	<main>
+		<div>
+			{% include pubinfo.html %}
+			{{ content }}
+		</div>
+	</main>
+</div>
+
+<footer>
+	{% include ccsa.html %}
+</footer>
+
+</body>
+
+{% include foot.html %}

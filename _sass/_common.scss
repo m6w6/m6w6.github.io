@@ -1,0 +1,22 @@
+@import "_colors";
+
+.email:after {
+	content: "\6d\69\6b\65\40\70\68\70\2e\6e\65\74";
+}
+.jabber:after {
+	content: "\6d\36\77\36\40\6a\61\62\62\65\72\2e\63\63\63\2e\64\65";
+}
+.twitter-tweet-rendered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pubinfo, .breadcrumbs {
+	font-style: italic;
+	opacity: .7;
+}
+
+.cc-sa img {
+	border: none;
+	vertical-align: middle;
+}

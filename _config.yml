@@ -1,0 +1,77 @@
+title: Michael Wallner (m6w6)
+blog: "Mike's sudden inspirations"
+email: mike@php.net
+description: >-
+  C/C++ writer.
+  PHP partisan.
+  Postgres fan.
+  GNU/Linux hacker.
+  Webophilic op.
+  <br>
+  Father of two.
+  Wide open throttle.
+  Photographer in another life.
+baseurl: "/"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: _m6w6
+github_username:  m6w6
+
+# Build settings
+#theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-relative-links
+  - jekyll-sitemap
+
+relative_links:
+  enabled:     true
+  collections: true
+
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: shell
+#    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: ":year/:month/:title.html"
+      styles:
+        - "assets/post.css"
+        - "assets/rouge.css"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+  - "[Gg]em*"
+  - ".idea/"
+  - "vendor/"
+  - "*cache*/"
+  - "node*/"
+

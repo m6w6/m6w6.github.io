@@ -1,0 +1,12 @@
+			<div class="pubinfo">
+				<p>
+				Posted by <em>{{ page.author }}</em>
+				on {{ page.date | date_to_long_string: "ordinal" }}
+				in <a href="blog.html">{{ site.blog }}</a>:
+				{% assign last_tag = page.tags | last %}
+				{% for tag in page.tags %}
+					<a class="tag" href="@{{ tag }}.html"
+					>{{ tag }}</a>{% if tag != last_tag %}, {% endif %}
+				{% endfor %}
+				</p>
+			</div>

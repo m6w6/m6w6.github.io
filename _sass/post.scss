@@ -1,0 +1,197 @@
+@import '_fonts';
+@import '_common';
+
+html {
+	font-size: $font-size;
+	font-family: $code-font;
+	background: #111  url("lapalma-o-10.jpg") fixed no-repeat;
+	background-size: cover;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: $line-height*1.33;
+	background: transparent url("lapalma-o-100.jpg") fixed no-repeat;
+	background-size: cover;
+	min-height: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 1rem;
+
+	&.post {
+		display: block;
+	}
+
+	>div {
+		max-width: 120ch;
+		border: 1px outset black;
+		border-top-left-radius: 1.33rem;
+		border-top-right-radius: 1.33rem;
+		margin: auto;
+		>header {
+			background: linear-gradient(180deg, rgba(175,175,175,.8), rgba(240,240,240,.8));
+			padding: .33rem;
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+
+			font-family: sans-serif;
+			text-align: center;
+			font-weight: bold;
+
+			display: grid;
+
+			>h1 {
+				grid-column: 1 / 8;
+				margin: 0;
+				font-size: 1.6rem;
+			}
+			>div {
+				grid-column: 9 / 10;
+				text-align: right;
+				margin-right: .5rem;
+				span {
+					display: inline-block;
+					border: 1px solid #000;
+					border-radius: .2rem;
+					background: linear-gradient(0deg, #afafaf, #f0f0f0);
+					width: 1.2rem;
+					line-height: 120%;
+					text-align: center;
+					padding: .1rem;
+					margin: .2rem;
+					animation: 1s linear 0s background;
+					&:hover {
+						background: linear-gradient(180deg, #afafaf, #f0f0f0);
+					}
+				}
+			}
+		}
+		>main {
+			>div {
+				background: #333;
+				color: #eee;
+				font-size: 1.5em;
+				padding: 1rem;
+				p {
+					&::before {
+						content: "~$ \A";
+						color: lime;
+						font-weight: 100;
+					}
+				}
+				blockquote p::before, .pubinfo p::before {
+					content: none;
+					color: white;
+				}
+				blockquote p:first-child::before {
+					content: "» ";
+					vertical-align: baseline;
+					font-size: 4rem;
+					opacity: .33;
+				}
+				blockquote p:last-child::after {
+					content: " «";
+					vertical-align: bottom;
+					font-size: 4rem;
+					opacity: .33;
+
+				}
+				&:last-child::after {
+					content: "_";
+					animation: 1s steps(2,end) 0s infinite blink;
+				}
+
+				h1,h2,h3,h4,h5,h6 {
+					font-weight: normal;
+					font-size: 1em;
+					color: lime;
+					margin-top:2em;
+					&::before {
+						content: "# ";
+					}
+					&::after {
+						content: " ⏎";
+					}
+				}
+			}
+		}
+	}
+
+	>footer {
+		line-height: 150%;
+		text-align: center;
+		max-width: 120ch;
+		margin: auto;
+		border-bottom-left-radius: 1.33rem;
+		border-bottom-right-radius: 1.33rem;
+//		background: rgba(255,255,255, .80);
+		background: linear-gradient(0deg, rgba(175,175,175,.8), rgba(240,240,240,.8));
+		border: 1px outset black;
+	}
+}
+
+.pubinfo {
+	text-align: right;
+	font-size: 1rem;
+}
+
+.cc-sa {
+	width: 50%;
+	padding: 1rem;
+	margin: auto;
+}
+
+@keyframes blink {
+	from {background: transparent;}
+	to {background: white;}
+}
+
+a {
+	&:link {
+		color: #00afff;
+	}
+	&:visited {
+		color: #cf00af;
+		opacity: .8;
+	}
+	&:hover {
+		color: #30ff00;
+	}
+}
+
+pre {
+	line-height: 150%;
+	font-size: 1.2rem;
+
+	background: black;
+	color: white;
+
+	border: 1px solid #1c1;
+
+	counter-increment: examples;
+	counter-reset: lines;
+	&::after {
+		background: #1c1;
+		color: black;
+		display: block;
+		content: " example" counter(examples) ".txt  " counter(lines) "L                                                                1,1     Top";
+	}
+
+	code {
+		opacity: .8;
+		span.newline {
+			counter-increment: lines;
+			&::before {
+				content: counter(lines) " ";
+				width: 2rem;
+				display: inline-block;
+				text-align: right;
+				opacity: .5;
+			}
+		}
+		padding: 1em 1em 1em 1em;
+		display: block;
+		overflow-x: auto;
+	}
+}
