@@ -30,9 +30,7 @@ jobs:
               artifact_id: artifact_id.data.artifacts[0].id,
               archive_format: "zip",
             });
-            const 
             await exec.exec(process.env.SYNC_COMMAND, [], {
               input: Buffer.from(artifact.data)
             });
-      - run: ls -al
    
