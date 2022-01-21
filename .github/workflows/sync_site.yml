@@ -33,4 +33,3 @@ jobs:
             await exec.exec(process.env.SYNC_COMMAND, [], {
               input: Buffer.from(artifact.data)
             });
-   
