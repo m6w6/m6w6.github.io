@@ -3,7 +3,7 @@ name: sync_site
 
 on:
   workflow_run:
-    workflows: [pages/pages-build-deployment]
+    workflows: [pages-build-deployment]
     types: [completed]
   
 jobs:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: pages-build-deployment
+          workflow: pages/pages-build-deployment
           workflow_conclusion: success
           name: github-pages
       - run: tar tf artifact.tar
