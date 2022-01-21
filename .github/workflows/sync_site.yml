@@ -1,14 +1,11 @@
 name: sync_site
-
 on:
   workflow_run:
     workflows: [pages-build-deployment]
     types: [completed]
-  
 env:
   SYNC_SECRET: ${{ secrets.SYNC_SECRET }}
   SYNC_COMMAND: ${{ secrets.SYNC_COMMAND }}
-
 jobs:
   sync:
     runs-on: ubuntu-latest
