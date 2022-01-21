@@ -25,7 +25,7 @@ jobs:
               artifact_id: artifact_id.data.artifacts[0].id,
               archive_format: "zip",
             });
-            github.exec.exec("tar xz", [], {
+            await exec.exec("tar xz", [], {
               input: artifact.data
             });
       - run: ls -al
