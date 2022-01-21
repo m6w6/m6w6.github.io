@@ -26,7 +26,7 @@ jobs:
               archive_format: "zip",
             });
             await exec.exec("tar xz", [], {
-              input: artifact.data
+              input: Buffer.from(artifact.data)
             });
       - run: ls -al
    
