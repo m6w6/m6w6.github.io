@@ -3,7 +3,7 @@ name: sync_site
 
 on:
   workflow_run:
-    workflows: [pages-build-deployment]
+    workflows: [pages/pages-build-deployment]
     types: [completed]
   
 jobs:
