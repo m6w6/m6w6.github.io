@@ -102,7 +102,7 @@ body {
 	}
 	.box-of-links a {
 		line-height: 2*$rel-size;
-		min-width: 8*$rel-size;
+		min-width: 12*$rel-size;
 		svg {
 			width: $rel-size*1.5;
 			height: $rel-size*1.5;
@@ -273,12 +273,12 @@ a {
 		color: var(--a-active-color);
 	}
 	&[rel="external"]:after {
-		content: " ↗";
+		content: "\00a0↗";
 		font-size: 1rem;
 		font-weight: bold;
 	}
 	&[download]:after {
-		content: " ↓";
+		content: "\00a0↓";
 		font-size: 1rem;
 		font-weight: bold;
 	}
