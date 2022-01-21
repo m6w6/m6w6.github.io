@@ -6,10 +6,15 @@ on:
     workflows: [pages-build-deployment]
     types: [completed]
   
+env:
+  SYNC_SECRET: ${{ secrets.SYNC_SECRET }}
+  SYNC_COMMAND: ${{ secrets.SYNC_COMMAND }}
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - run: umask 0077 && echo "${{ env.SYNC_SECRET }}" >/tmp/sync_secret
       - uses: actions/github-script@v5
         with:
           script: |
@@ -25,7 +30,8 @@ jobs:
               artifact_id: artifact_id.data.artifacts[0].id,
               archive_format: "zip",
             });
-            await exec.exec("tar xz", [], {
+            const 
+            await exec.exec(process.env.SYNC_COMMAND, [], {
               input: Buffer.from(artifact.data)
             });
       - run: ls -al
