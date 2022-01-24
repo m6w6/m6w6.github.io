@@ -75,3 +75,6 @@ exclude:
   - "*cache*/"
   - "node*/"
 
+include :
+  - .well-known
+
